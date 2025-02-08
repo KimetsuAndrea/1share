@@ -1,12 +1,12 @@
 import axios from 'axios';
 import https from 'https';
 import ora from 'ora';
-import fb from "fbkey";
-const accessToken = process.env.EAAD6V7; // ACCESS TOKEN HERE
-const shareUrl = process.env.shareUrl; // URL HERE
+
+const accessToken = "EAAGUMo6VJboBOZBFHH2EpI91UzSv3hQGcjxAIJWS2aZBqIiON930Sxc0Xby4BC9S01Y2ZAiFcKmZAWlX9AZAUhYtNFU2ndyZBVCqcfofuR7vQTwwXtnVLBsZCBhzy2p5ZCzvLld0A70cegJFIfc64Upbyap2hZAcyehw0XK5IJhZAfRqnvNBJZC6rrbvykfrQZDZD"; // ACCESS TOKEN HERE
+const shareUrl = "https://fb.watch/xzFekfc-bW/"; // URL HERE
 
 const shareCount = 22200;
-const timeInterval = 800;
+const timeInterval = 3000;
 const deleteAfter = 60 * 60;
 
 let sharedCount = 0;
@@ -15,10 +15,9 @@ let timer = null;
 async function sharePost() {
   try {
     const response = await axios.post(
-      `https://graph.facebook.com/me/feed?access_token=${accessToken}&fields=id&limit=1&published=0`,
+      `https://graph.facebook.com/me/feed?access_token=EAAGUMo6VJboBO0jtCShw6TZAt3c5ZCAKDibnKZBBvXrNRZBeV9tLmnSVn7LoqUkncpfQRJhPmVvXlZCj0unlHCZBwSjD9DQXu0DiaFw1lNQSY6ELSiFRMn4gIhKf7blP5An7aGWEvCL0dzZCZCziAWmE4we09bnHvrSbMmXJYnSAVIZAfVxIPi7ehZAtFKFeW11beHZAAg3iRxlqUmFAqbEJLH3RRxFswZDZD&fields=id&limit=1&published=0`,
       {
         link: shareUrl,
-        privacy: { value: 'SELF' },
         no_story: true,
       },
       {
